@@ -23,5 +23,10 @@
         <Icon icon="mdi:food-steak" class="icon" width="16" height="16" />Meat
       </span>
     {/if}
+    {#if meal.labels.includes("FISH")}
+      <span class="label fish-label">
+        <Icon icon="mdi:fish" class="icon" width="16" height="16" />Fish
+      </span>
+    {/if}
   </div>
 </div>
