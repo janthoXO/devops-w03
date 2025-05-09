@@ -2,6 +2,7 @@ package de.tum.aet.devops25.w03.controller;
 
 import de.tum.aet.devops25.w03.model.Dish;
 import de.tum.aet.devops25.w03.service.CanteenService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,10 @@ public class CanteenController {
     public ResponseEntity<List<Dish>> getTodayMeals(@PathVariable String canteenName) {
         // TODO: Implement the logic to fetch today's meals for the specified canteen using the CanteenService
         var meals = canteenService.getTodayMeals(canteenName);
+        if(meals.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+        }
+
         return ResponseEntity.ok(meals);
     }
 }
