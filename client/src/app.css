@@ -231,6 +231,11 @@ header h1 {
     color: #b91c1c;
 }
 
+.fish-label {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
 .allergen-label {
     background-color: #eff6ff;
     color: #1e40af;
